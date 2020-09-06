@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html><head>
+<title>My E-Learning site</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="" />
+<meta name="copyright" content="" />
+<link rel="stylesheet" type="text/css" href="/css/kickstart.css" media="all" />                  
+<link rel="stylesheet" type="text/css" href="/css/style.css" media="all" />                          
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/kickstart.js"></script>                                
+</head>
+<body>
+
+<!-- Menu Horizontal -->
+<%- include('layouts/header') -%>
+
+<div class="grid">
+	
+
+	 
+<div class="col_12">
+	
+	
+	
+	<!-- <%- include('layouts/login') -%> -->
+   
+
+<h2>Create an account</h2>
+
+<form id="regForm" action="/users/create" method="POST">
+    <div>
+        <label >Account type</label>
+        <select name="type" id="">
+            <option value="student">student</option>
+            <option value="instructor">instructor</option>
+        </select>
+    </div><br>
+    <div>
+        <label>Frist name</label>
+        <input type="text" name="first_name" value="">
+    </div><br>
+    <div>
+        <label>Last name</label>
+        <input type="text" name="last_name" value="">
+    </div><br>
+    <div>
+        <label>Street Address:</label>
+        <input type="text" name="street_address" value="">
+    </div><br>
+    <div>
+        <label>City </label>
+        <input type="text" name="city" value="">
+    </div><br>
+    <div>
+        <label>State </label>
+        <input type="text" name="state" value="">
+    </div><br>
+    <div>
+        <label>Zip </label>
+        <input type="text" name="zip" value="">
+    </div><br>
+    <div>
+        <label>Email Address </label>
+        <input type="email" name="email" value="">
+    </div><br>
+    <div>
+        <label>Password </label>
+        <input type="password" name="password" value="">
+    </div><br>
+    <div>
+        <label>Confirm Password </label>
+        <input type="password" name="confirmpassword" value="">
+    </div><br>
+    <div>
+       
+        <input type="submit" value="Signup">
+    </div>
+</form>
+    
+    
+   
+	
+	
+	
+</div>
+
+</div>
+
+<!-- ===================================== START FOOTER ===================================== -->
+<%- include('layouts/footer') -%>
+</body></html>

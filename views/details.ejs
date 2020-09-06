@@ -1,9 +1,12 @@
+<%if (locals.user){%>
+
 <h2><%= details.title%></h2>
 <p>
     <strong>Instructor: </strong>
 </p>
 <p>
     <%= details.description%>
+    
 </p>
 <ul class="alt">
     <!-- use foreach loop on details.lessons -->
@@ -13,6 +16,7 @@
 
 <!-- class registration form -->
 <!-- if user is logges in then only show this form  -->
+
 <form id="classRegForm" action="/students/class/register" method="POST">
     <input type="hidden" name="student_id" value="">  
     <input type="hidden" name="class_id">
@@ -20,5 +24,6 @@
     <input type="submit" class="buttom" value="Register for this class">
 </form>
 <!-- else -->
-
+<%} else{%>
 <p>You have to logged in to register for this class</p>
+<%}%>    

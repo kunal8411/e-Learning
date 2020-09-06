@@ -1,3 +1,11 @@
+<!-- student -->
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html><head>
 <title>My E-Learning site</title>
@@ -20,26 +28,51 @@
 
 	 
 <div class="col_12">
-	<%- include('layouts/welcome') -%>
 	
-	<%- include('layouts/login') -%>
+    
+    <h2><%= student.firstname%>'s classes' </h2>
+    <table cellspacing="0" cellpadding="0">
+        <tr>
+            <th>class ID</th>
+            <th>Class Name</th>
+            <th></th>
+        </tr>
+        <tbody>
+            <% (student.classes).forEach(function(classes){ %>
+                <tr>
+                    <td><%=classes.class_id %></td>
+                    <td><%=classes.class_title %></td>
+                    <td><a href="/classes/<%=classes.class_id %>/lessons">View Lessons</a></td>
+                </tr>
+
+
+             <% }) %>
+        </tbody>
+        
+    </table>
+
+    <!-- <div class="col_3"> -->
+        <h3>Welcome back <%= student.firstname%></h3>
+        <a href="#">My Classes</a>
+
+        <br>
+        <br>
+        <a href="/users/signout">Logout</a>
+		<br>
+		<br>
+		<a href="">Profile</a>
+    <!-- </div> -->
+	
 	
 
     <hr />
     
     
-    <%  classes.forEach(function(value){%>
-	<div class="col_4">
-	<h4><%= value.title %></h4>
-	<p><%= value.description %></p>
-    <a class="buttton" href="/classes/<%= value._id%>">View class</a>
-	</div>
-	<% }) %>
+   
 	
 	
 	
 </div>
-<button><a href="/users/kunal">Kunal</a></button>
 
 </div>
 

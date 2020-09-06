@@ -17,7 +17,10 @@ module.exports.classes= async function(req,res){
 
 module.exports.details= async function(req,res){
     const details= await Class.findById(req.params.id);
+   
+   
     return res.render('details',{
-        details:details
+        details:details,
+        
     })
 }
