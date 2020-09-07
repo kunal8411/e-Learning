@@ -7,7 +7,7 @@ const passport = require('passport');
 
 router.get('/signup',users_controller.signup)
 router.post('/create',users_controller.create)
-
+router.get('/login',users_controller.login)
 
 router.post('/createsession',passport.authenticate(
     'local',
@@ -19,5 +19,7 @@ router.post('/createsession',passport.authenticate(
 
 //signout
 router.get('/signout',users_controller.destroySession);
+router.get('/profile',users_controller.profile)
+
 
 module.exports=router;

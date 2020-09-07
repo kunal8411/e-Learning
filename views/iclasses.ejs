@@ -6,28 +6,13 @@
 
 
 
-<!DOCTYPE html>
-<html><head>
-<title>My E-Learning site</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="" />
-<meta name="copyright" content="" />
-<link rel="stylesheet" type="text/css" href="/css/kickstart.css" media="all" />                  
-<link rel="stylesheet" type="text/css" href="/css/style.css" media="all" />                          
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="/js/kickstart.js"></script>                                
-</head>
-<body>
 
-<!-- Menu Horizontal -->
-<%- include('layouts/header') -%>
 
-<div class="grid">
+
+
 	
 
-	 
-<div class="col_12">
+
 	
     
     <h2><%= instructor.firstname%>'s classes' </h2>
@@ -36,6 +21,7 @@
             <th>class ID</th>
             <th>Class Name</th>
             <th></th>
+            <th></th>
         </tr>
         <tbody>
             <% (instructor.classes).forEach(function(classes){ %>
@@ -43,6 +29,7 @@
                     <td><%=classes.class_id %></td>
                     <td><%=classes.class_title %></td>
                     <td><a href="/classes/<%=classes.class_id %>/lessons">View Lessons</a></td>
+                    <td> <a href="/instructors/classes/<%=classes.class_id %>/lessons/new">Add Lessons</a> </td>
                 </tr>
 
 
@@ -52,7 +39,7 @@
     </table>
 
     <!-- <div class="col_3"> -->
-        <h3>Welcome back <%= instructor.firstname%></h3>
+        <!-- <h3>Welcome back <%= instructor.firstname%></h3>
         <a href="#">My Classes</a>
 
         <br>
@@ -60,12 +47,12 @@
         <a href="/users/signout">Logout</a>
 		<br>
 		<br>
-		<a href="">Profile</a>
-    <!-- </div> -->
+		<a href="">Profile</a> -->
+    
 	
 	
 
-    <hr />
+   
     
     
    
@@ -77,5 +64,5 @@
 </div>
 
 <!-- ===================================== START FOOTER ===================================== -->
-<%- include('layouts/footer') -%>
+<!-- <%- include('layouts/footer') -%> -->
 </body></html>

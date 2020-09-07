@@ -10,7 +10,7 @@ const port= 8000;
 const cookieParser= require('cookie-parser');
 var app = express();
 app.use(express.urlencoded());
-
+const expressLayout=require('express-ejs-layouts');
 app.use(cookieParser());
 const boduparser= require('body-parser');
 const passport= require('passport');
@@ -23,7 +23,9 @@ const expressvalidator= require('express-validator');
 app.use(express.static('./assets'));
 app.set('view engine','ejs');
 app.set('views','./views');
-
+app.use(expressLayout);
+app.set('layout extractStyles',true);
+app.set('layout extractScripts',true);
 const MongoStore=require('connect-mongo')(session);
 app.use(session({
     secret:'abcdefghijk',
@@ -47,7 +49,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-
+app.use(passport.setAuthenticateduser);
 //eexpress Validator
 // app.use(expressvalidator({
 //     errorFormatter:function(param,msg,value){

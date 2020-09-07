@@ -1,8 +1,8 @@
-<%if (locals.user){%>
+
 
 <h2><%= details.title%></h2>
 <p>
-    <strong>Instructor: </strong>
+    <strong>Instructor:<%= details.instructor%> </strong>
 </p>
 <p>
     <%= details.description%>
@@ -16,11 +16,11 @@
 
 <!-- class registration form -->
 <!-- if user is logges in then only show this form  -->
-
-<form id="classRegForm" action="/students/class/register" method="POST">
-    <input type="hidden" name="student_id" value="">  
-    <input type="hidden" name="class_id">
-    <input type="hidden" name="class_title">
+<%if (locals.user){%>
+<form id="classRegForm" action="/<%= locals.type%>s/classes/register" method="POST">
+    <input type="hidden" name="student_id" value="<%= locals.user._id%>">  
+    <input type="hidden" name="class_id" value="<%= details._id%>">
+    <input type="hidden" name="class_title" value="<%= details.title%>">
     <input type="submit" class="buttom" value="Register for this class">
 </form>
 <!-- else -->

@@ -11,7 +11,7 @@ const Instructor = require('../models/instructor');
 module.exports.classes=async function(req,res){
     let instructor= await Instructor.findOne({
         email:req.user.email});
-    console.log(instructor)
+    // console.log(instructor)
     if(instructor){
         return res.render('iclasses',{
             instructor:instructor

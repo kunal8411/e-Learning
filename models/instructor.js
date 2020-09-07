@@ -34,3 +34,18 @@ const InstructorSchema = new mongoose.Schema({
 const Instructor=mongoose.model('Instructor',InstructorSchema); 
 
 module.exports= Instructor;
+
+module.exports.register= function(info, callback ){
+    instructor_email= info['instructor_email'];
+    class_id=info['class_id'];
+    class_title=info['class_title'];
+    
+
+    var query= {email:instructor_email}
+    Instructor.findOneAndUpdate(
+        query,
+        {$push:{"classes":{class_id:class_id, class_title: class_title}}},
+        {safe: true, upsert: true},
+        callback
+    )
+}

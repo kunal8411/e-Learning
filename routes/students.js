@@ -6,7 +6,7 @@ const student_controller= require('../controllers/student_controller');
 
 
 router.get('/classes',student_controller.classes);
-
+router.post('/classes/register',)
 
 
 

@@ -1,4 +1,3 @@
-<!-- student -->
 
 
 
@@ -6,28 +5,13 @@
 
 
 
-<!DOCTYPE html>
-<html><head>
-<title>My E-Learning site</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="" />
-<meta name="copyright" content="" />
-<link rel="stylesheet" type="text/css" href="/css/kickstart.css" media="all" />                  
-<link rel="stylesheet" type="text/css" href="/css/style.css" media="all" />                          
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="/js/kickstart.js"></script>                                
-</head>
-<body>
 
-<!-- Menu Horizontal -->
-<%- include('layouts/header') -%>
 
-<div class="grid">
+>
 	
 
 	 
-<div class="col_12">
+
 	
     
     <h2><%= student.firstname%>'s classes' </h2>
@@ -51,7 +35,7 @@
         
     </table>
 
-    <!-- <div class="col_3"> -->
+    
         <h3>Welcome back <%= student.firstname%></h3>
         <a href="#">My Classes</a>
 
@@ -61,7 +45,7 @@
 		<br>
 		<br>
 		<a href="">Profile</a>
-    <!-- </div> -->
+    
 	
 	
 
@@ -72,10 +56,3 @@
 	
 	
 	
-</div>
-
-</div>
-
-<!-- ===================================== START FOOTER ===================================== -->
-<%- include('layouts/footer') -%>
-</body></html>

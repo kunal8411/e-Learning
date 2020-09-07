@@ -24,3 +24,10 @@ module.exports.details= async function(req,res){
         
     })
 }
+module.exports.lessons= async function(req,res){
+    const lessons= await Class.findById(req.params.id);
+    return res.render('lessons',{
+        lessons:lessons
+    })
+
+}

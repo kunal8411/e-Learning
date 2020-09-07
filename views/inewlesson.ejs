@@ -1,0 +1,48 @@
+
+
+
+
+	
+
+	 
+
+	
+	
+	
+
+
+<h2>Add a lesson</h2>
+
+<form id="regForm" action="/instructors/classes/<%=class_id%>/lessons/new" method="POST">
+    
+    <div>
+        <label>Lesson Number: </label>
+        <input type="text" name="lesson_number">
+    </div><br>
+    <div>
+        <label>Lesson Title: </label>
+        <input type="text" name="lesson_title" >
+    </div><br>
+    <div>
+        <label> Lesson Body: </label>
+        <textarea name="lesson_body" id="" cols="30" rows="10"></textarea>
+    </div><br> <br>
+    
+    <div>
+       
+        <input type="submit" value="Add Lesson">
+    </div>
+</form>
+    
+    
+   
+	
+	
+	
+</div>
+
+</div>
+
+<!-- ===================================== START FOOTER ===================================== -->
+<!-- <%- include('layouts/footer') -%> -->
+</body></html>

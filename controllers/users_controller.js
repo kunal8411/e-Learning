@@ -10,6 +10,7 @@ const Instructor= require('../models/instructor');
 
 //get sign up page
 module.exports.signup= function(req,res){
+    
     return res.render('signup');
 }
 
@@ -83,16 +84,23 @@ module.exports.create= function(req,res){
 //post method for login page 
 module.exports.createsession= function(req,res){
     var usertype= req.user.type;
-    
+    // var username= req.user;
+    // console.log(username)
     return res.redirect('/'+usertype+'s/classes'); 
-    // return res.redirect('back')
+    // return res.redirect('/')
 }
 
-
+module.exports.login= function(req,res){
+    return res.render('loginpage')
+}
 //sign-out controller
 module.exports.destroySession= function(req,res){
     //this is by default method provided by passoport 
     req.logout();
     req.flash('success','Logged out Successfully');
     return res.redirect('/');
+}
+
+module.exports.profile= function(req,res){
+    return res.render('profile')
 }

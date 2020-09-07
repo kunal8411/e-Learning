@@ -16,6 +16,10 @@ module.exports.classes=async function(req,res){
             student:student
         })
     }
-
-
 }
+
+// module.exports.register= async function(req,res){
+//     info=[];
+//     info['class_id']=req.body.class_id;
+//     info['class_title']= req.body.class_title
+// }

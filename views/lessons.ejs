@@ -1,0 +1,20 @@
+
+
+<h2><%= lessons.title%></h2>
+
+<table>
+    <tr>
+        <th>Lesson Number</th>
+        <th>Lesson Title</th>
+        <th></th>
+        
+    </tr>
+    <% (lessons.lessons).forEach(function(lesson){ %>
+        <tr>
+            <td><%= lesson.lesson_number%></td>
+            <td><%= lesson.lesson_title%></td>
+            <td><a href="/classes/<%= lessons._id%>/lessons/<%= lesson.lesson_number%>"> View Lesson </a></td>
+
+        </tr>
+    <% }) %>
+</table>
